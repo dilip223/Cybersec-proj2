@@ -1,0 +1,3 @@
+﻿  sock_client.cpp
+C:\Users\pandi\source\repos\sock\sock_client\sock_client.cpp(10,23): warning C4018: '<': signed/unsigned mismatch
+  sock_client.vcxproj -> C:\Users\pandi\source\repos\sock\Debug\sock_client.exe

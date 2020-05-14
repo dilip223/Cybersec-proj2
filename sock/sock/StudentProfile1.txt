@@ -1,0 +1,10 @@
+Name:    Dolores
+Age:     18
+Grade:   13
+GPA:     2.75
+Email:   dolo1@school.edu
+Phone:   3031231234
+SSN:     1234
+Balance: 45.82
+Courses: 
+Parents: 

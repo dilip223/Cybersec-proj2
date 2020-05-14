@@ -1,0 +1,10 @@
+Name:    Teddy
+Age:     19
+Grade:   14
+GPA:     3.42
+Email:   tedd5@school.edu
+Phone:   3031234321
+SSN:     4321
+Balance: 14.42
+Courses: 
+Parents: 

@@ -1,0 +1,10 @@
+Name:    Bernard
+Age:     20
+Grade:   14
+GPA:     3.9
+Email:   bern6@school.edu
+Phone:   3037654321
+SSN:     6543
+Balance: 0
+Courses: 
+Parents: 
