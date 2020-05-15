@@ -1,5 +1,5 @@
 Write up for COSC 5010 Project 2
-Dilip Pndit
+Dilip Pandit
 Zachary Tovar
 
 This project was a good introduction into the critical problem of data protection across network 
