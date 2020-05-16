@@ -8,12 +8,12 @@ To illustrate data tampering, we will consider a scenario where the third
 student’s data is lost/tampered intentionally during data transmission. In the 
 client side, after receiving the message we will edit some binary bits such that 
 the remainder of CRC key division will not be zero. The client program should be 
-able to detect the tampering and send a message to resend the data.Figure 5 is the 
+able to detect the tampering and send a message to resend the data.Figure 5 in the pdf is the 
 data for student “Bernard” which is successfully sent from the server. However, 
 before the message is received in the “sock_client.cpp”, a FOR loop is implemented 
 to change some bits in the MESSAGE buffer. The resulting message does not yield a 0 
 remainder and error message is sent indicating data needs to be re sent which is 
-seen in Figure 6.
+seen in Figure 6 in the pdf.
 
 IDA pro analysis of the software:
 
@@ -29,14 +29,14 @@ Another import is related to network. There are imports of WSAstartup, WSAcleanu
 bind, socket, etc which indicate the program will listen for upcoming connection.From the 
 imports, we went to the subroutines where they were called. It was difficult to decode 
 anything from file imports. However, it was seen that the all the network functions were 
-called from a single subroutine sub_4236C0. From Figure 7, we can see the calls the 
+called from a single subroutine sub_4236C0. From Figure 7 in the pdf, we can see the calls the 
 subroutine makes to WSAstartup, creates a socket, and uses INETaddress. Furthermore, to 
 prove that it was main function, at the start of the function the stack content is compared 
 with 3 which represents number of student data for which the server code is iterated. It can 
-be seen in Figure 8.Inside the main function, strings were found that represented the message 
+be seen in Figure 8 in the pdf.Inside the main function, strings were found that represented the message 
 displayed on screen. First, we checked the section for CRC. Before displaying the binary 
 string, a call was made to sub_411636. Using the X-ref, the subroutine sub_41A230 called the 
-function where an offset value of 1001 is pushed as seen in Figure 9. Location loc_41A501 of 
+function where an offset value of 1001 is pushed as seen in Figure 9 in the pdf. Location loc_41A501 of 
 the subroutine has a long arithmetic operation which hints at modulo-2 division and remainder 
 calculation. Thus, we can conclude that sub_41A230 represents the “crc.cpp” where CRC was 
 performed.Next, we need to find the key for the XOR encoding. A search is made for all 
@@ -49,5 +49,5 @@ a jump to a location in the subroutine sub_417F90. The subroutine was a hub for 
 but interestingly, it was a hub for subroutines which used the file imports. Searching for XOR 
 operations in subroutines that called sub_417F90 from sub_411726, the subroutine sub_41ECD0 was 
 most susceptible. It XORed the content obtained from sub_417F90 with a variable var_15 as seen 
-in Figure 10. Moving up to see what was loaded in var_15, Figure 11 should a value of 4Bh was 
+in Figure 10 in the pdf. Moving up to see what was loaded in var_15, Figure 11 in the pdf should a value of 4Bh was 
 loaded. It is the ASCII of ‘K’ which is the key for XOR encoding in our case.
