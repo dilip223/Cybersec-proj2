@@ -1,8 +1,8 @@
-Write up for COSC 5010 Project 2
+# Write up for COSC 5010 Project 2
 Dilip Pndit
 Zachary Tovar
 
-Data Tampering: 
+## Data Tampering: 
 
 To illustrate data tampering, we will consider a scenario where the third 
 student’s data is lost/tampered intentionally during data transmission. In the 
@@ -15,7 +15,7 @@ to change some bits in the MESSAGE buffer. The resulting message does not yield 
 remainder and error message is sent indicating data needs to be re sent which is 
 seen in Figure 6 in the pdf.
 
-IDA pro analysis of the software:
+### IDA pro analysis of the software:
 
 In this section, the disassembly is done on the executable of the server file. We 
 will attempt to reverse engineer the keys for XOR encoding and Cyclic Redundancy Check. 
